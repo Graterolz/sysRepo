@@ -248,4 +248,19 @@ class Sys_model extends CI_Model{
 			return false;
 		}
 	}
+
+	//
+	function searchCodigo($string){
+		$this->db->from(TABLA_CODIGO);
+		$this->db->like(TABLA_CODIGO.'.'.TITULO,$string);
+		$this->db->where(TABLA_CODIGO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$query=$this->db->get();
+		// echo $this->db->last_query();
+
+		if($query->num_rows()>0){
+			return $query;
+		}else{
+			return false;
+		}
+	}
 }

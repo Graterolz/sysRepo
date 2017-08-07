@@ -239,6 +239,7 @@ class Codigo extends CI_Controller {
 		}
 	}
 
+	//
 	function execute($idcod = NULL){
 		if(!$this->session->userdata(IDUSU_SESSION)){
 			redirect(USUARIO_LOGIN, 'refresh');
@@ -254,6 +255,16 @@ class Codigo extends CI_Controller {
 
 		$this->load->view(HEADER);
 		$this->load->view(EXE_CODIGO,$data);
+		$this->load->view(FOOTER);
+	}
+
+	//
+	function search($string = NULL){
+		$data['codigo'] = $this->Sys_model->searchCodigo($string);
+		
+		$this->load->view(HEADER);
+		$this->load->view(MENU);
+		// $this->load->view(SEARCH_CODIGO,$data);
 		$this->load->view(FOOTER);
 	}
 }

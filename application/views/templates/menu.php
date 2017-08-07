@@ -29,6 +29,18 @@ $idrol = $this->session->userdata(IDROL_SESSION);
 			<div class="navbar-default sidebar" role="navigation">
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<?= form_open(CODIGO_SEARCH,array('role' => 'form','autocomplete' => 'off'));?>
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Buscar..." required="1">
+								<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">
+									<i class="fa fa-search"></i>
+								</button>
+							</span>
+							</div>
+							<?= form_close() ?>
+						</li>
 						<li>
 							<a href="<?= base_url(PATH_MENU)."/".USUARIO_CONTROLLER; ?>"><i class="fa fa-user fa-fw"></i> <?= MENU_USUARIO; ?></a>
 						</li>
@@ -37,7 +49,7 @@ $idrol = $this->session->userdata(IDROL_SESSION);
 						</li>
 						<li>
 							<a href="<?= base_url(PATH_MENU)."/".USUARIO_REPORTS; ?>"><i class="fa fa-list-alt fa-fw"></i> <?= MENU_REPORTE; ?></a>
-						</li>												
+						</li>
 <?php
 if($idrol == ADM){	
 ?>

@@ -39,6 +39,7 @@ define ('CODIGO_APROB','codigo/aprob');
 define ('CODIGO_NOAPROB','codigo/noaprob');
 define ('CODIGO_DOWNLOAD','codigo/download');
 define ('CODIGO_EXECUTE','codigo/execute');
+define ('CODIGO_SEARCH','codigo/search');
 
 // Controlador EVENTO
 define ('EVENTO_CONTROLLER','evento');
@@ -52,7 +53,7 @@ define ('GET_LOGIN','usuario/get_login');
 define ('GET_REGISTER','usuario/get_register');
 define ('GET_USUARIO','usuario/get_usuario');
 define ('EDIT_USUARIO','usuario/edit_usuario');
-define ('REPORT_USUARIO','usuario/report_usuario');
+define ('REPORT_USUARIO','others/report_usuario');
 
 // Vistas CODIGO
 define ('GET_CODIGO','codigo/get_codigo');
@@ -60,6 +61,7 @@ define ('ADD_CODIGO','codigo/add_codigo');
 define ('EDIT_CODIGO','codigo/edit_codigo');
 // define ('DEL_CODIGO','codigo/del_codigo');
 define ('EXE_CODIGO','codigo/exe_codigo');
+define ('SEARCH_CODIGO','others/search_codigo');
 define ('LIST_CODIGO_ADM','codigo/list_codigo_adm');
 
 // Vistas EVENTO
