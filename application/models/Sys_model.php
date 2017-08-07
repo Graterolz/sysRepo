@@ -216,7 +216,7 @@ class Sys_model extends CI_Model{
 		}
 	}
 
-	//
+	// Obtiene cantidad de codigos por estado
 	function getCodigoByEstado($estado_codigo){
 		$this->db->select(
 			'COUNT(*) AS '.CANTIDAD

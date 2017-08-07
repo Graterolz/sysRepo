@@ -181,7 +181,7 @@ if ($usuario){
 									<th><?= $codigo_rules[IDCOD]['label']; ?></th>
 									<th><?= $codigo_rules[TITULO]['label']; ?></th>
 									<th><?= $codigo_rules[FECHA_REGISTRO]['label']; ?></th>
-									<th colspan="5"></th>
+									<th colspan="4"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -196,24 +196,27 @@ if ($usuario){
 <?php
 	if($codigo_row->estado_codigo == ESTADO_CODIGO_EDICION){
 ?>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_SEND."/".$codigo_row->idcod; ?>" class="btn btn-default btn-xs"><i class="fa fa-send fa-fw"></i> <strong>ENVIAR</strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EDIT."/".$codigo_row->idcod; ?>" class="btn btn-success btn-xs"><i class="fa fa-edit fa-fw"></i> <strong>EDITAR</strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DEL."/".$codigo_row->idcod; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash fa-fw"></i> <strong>ELIMINAR</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_SEND."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm"><i class="fa fa-send fa-fw"></i> <strong>ENVIAR</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EDIT."/".$codigo_row->idcod; ?>" class="btn btn-success btn-sm"><i class="fa fa-edit fa-fw"></i> <strong>EDITAR</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DEL."/".$codigo_row->idcod; ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash fa-fw"></i> <strong>ELIMINAR</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EXECUTE."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-flash fa-fw"></i> <strong>EJECUTAR</strong></a></td>
 <?php
 	}else if ($codigo_row->estado_codigo == ESTADO_CODIGO_ENVIADO){
 ?>
-									<td><i class="fa fa-send fa-fw"></i><strong> ENVIADO</strong></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-xs"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DOWNLOAD."/".$codigo_row->idcod; ?>" class="btn btn-success btn-xs"><i class="fa fa-download fa-fw"></i> <strong>DESCARGAR</strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EXECUTE."/".$codigo_row->idcod; ?>" class="btn btn-default btn-xs" target="_blank"><i class="fa fa-flash fa-fw"></i> <strong>EJECUTAR</strong></a></td>
+									<td><a href="#" class="btn btn-default btn-sm disabled"><i class="fa fa-send fa-fw"></i> <strong>ENVIADO</strong></a></td>
+									<!--<td><i class="fa fa-send fa-fw"></i><strong> ENVIADO</strong></td>-->
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DOWNLOAD."/".$codigo_row->idcod; ?>" class="btn btn-success btn-sm"><i class="fa fa-download fa-fw"></i> <strong>DESCARGAR</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EXECUTE."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-flash fa-fw"></i> <strong>EJECUTAR</strong></a></td>
 									
 <?php
 	}else{
 ?>
-									<td><i class="fa fa-check fa-fw"></i><strong> APROBADO</strong></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong></strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DOWNLOAD."/".$codigo_row->idcod; ?>" class="btn btn-success btn-sm"><i class="fa fa-download fa-fw"></i> <strong></strong></a></td>
-									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EXECUTE."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-flash fa-fw"></i> <strong></strong></a></td>
+									<td><a href="#" class="btn btn-primary btn-sm disabled"><i class="fa fa-check fa-fw"></i> <strong>APROBADO</strong></a></td>
+									<!--<td><i class="fa fa-check fa-fw"></i><strong> APROBADO</strong></td>-->
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DOWNLOAD."/".$codigo_row->idcod; ?>" class="btn btn-success btn-sm"><i class="fa fa-download fa-fw"></i> <strong>DESCARGAR</strong></a></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EXECUTE."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-flash fa-fw"></i> <strong>EJECUTAR</strong></a></td>
 <?php
 	}
 ?>

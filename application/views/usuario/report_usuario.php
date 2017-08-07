@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<script src="<?= base_url(PATH_RESOURCES3)?>/highcharts.js"></script>
+
 <div id="page-wrapper">
 	<div class="row">
 		<div class="col-lg-12">

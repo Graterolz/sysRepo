@@ -152,6 +152,7 @@ class Codigo extends CI_Controller {
 			redirect(USUARIO_CONTROLLER, 'refresh');
 		}
 		$this->Codigo_model->send($idcod);
+
 		if($this->session->userdata(IDROL_SESSION) == ADM){
 			$this->aprob($idcod);
 		}else{
@@ -181,7 +182,12 @@ class Codigo extends CI_Controller {
 			);
 			$this->Evento_model->add($data);
 		}
-		redirect(CODIGO_CONTROLLER, 'refresh');
+
+		if($this->session->userdata(IDROL_SESSION) == ADM){
+			redirect(USUARIO_CONTROLLER, 'refresh');
+		}else{
+			redirect(CODIGO_CONTROLLER, 'refresh');
+		}		
 	}
 
 	//
