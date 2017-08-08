@@ -170,7 +170,7 @@ class Usuario extends CI_Controller {
 					}
 				}else{
 					$data['message'] = 'Contraseñas incorrectas';
-				}				
+				}
 			}
 		}
 

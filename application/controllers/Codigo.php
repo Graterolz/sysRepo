@@ -259,12 +259,16 @@ class Codigo extends CI_Controller {
 	}
 
 	//
-	function search($string = NULL){
-		$data['codigo'] = $this->Sys_model->searchCodigo($string);
-		
+	function search(){
+		$data['codigo'] = $this->Sys_model->getCodigoByString($this->input->post(CODIGO));
+		$data['codigo_rules'] = $this->Codigo_model->codigo_rules;
+
+		$data['usuario'] = $this->Sys_model->getUsuarioByString($this->input->post(CODIGO));
+		$data['usuario_rules'] = $this->Usuario_model->usuario_rules;
+
 		$this->load->view(HEADER);
 		$this->load->view(MENU);
-		// $this->load->view(SEARCH_CODIGO,$data);
+		$this->load->view(SEARCH_CODIGO,$data);
 		$this->load->view(FOOTER);
 	}
 }

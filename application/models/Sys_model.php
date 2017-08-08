@@ -250,10 +250,11 @@ class Sys_model extends CI_Model{
 	}
 
 	//
-	function searchCodigo($string){
+	function getCodigoByString($string){
 		$this->db->from(TABLA_CODIGO);
-		$this->db->like(TABLA_CODIGO.'.'.TITULO,$string);
 		$this->db->where(TABLA_CODIGO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->like(TABLA_CODIGO.'.'.TITULO,$string);
+		$this->db->or_like(TABLA_CODIGO.'.'.DESCRIPCION,$string);
 		$query=$this->db->get();
 		// echo $this->db->last_query();
 
@@ -262,5 +263,22 @@ class Sys_model extends CI_Model{
 		}else{
 			return false;
 		}
+	}
+
+	//
+	function getUsuarioByString($string){
+		$this->db->from(TABLA_USUARIO);
+		$this->db->where(TABLA_USUARIO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$this->db->like(TABLA_USUARIO.'.'.USER,$string);
+		$this->db->or_like(TABLA_USUARIO.'.'.NOMBRE,$string);
+		$this->db->or_like(TABLA_USUARIO.'.'.APELLIDO,$string);
+		$query=$this->db->get();
+		// echo $this->db->last_query();
+
+		if($query->num_rows()>0){
+			return $query;
+		}else{
+			return false;
+		}		
 	}
 }

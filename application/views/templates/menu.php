@@ -30,9 +30,19 @@ $idrol = $this->session->userdata(IDROL_SESSION);
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 						<li class="sidebar-search">
+<?php
+	$codigo_form = array(
+		CODIGO => array(
+			'class' => 'form-control',
+			'name' => CODIGO,
+			'placeholder' => 'Buscar...',
+			'required' => TRUE
+		)
+	);
+?>						
 							<?= form_open(CODIGO_SEARCH,array('role' => 'form','autocomplete' => 'off'));?>
 							<div class="input-group custom-search-form">
-								<input type="text" class="form-control" placeholder="Buscar..." required="1">
+								<?= form_input($codigo_form[CODIGO]); ?>
 								<span class="input-group-btn">
 								<button class="btn btn-default" type="submit">
 									<i class="fa fa-search"></i>
