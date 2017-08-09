@@ -117,7 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- #C9 --><!-- jQuery -->
 <script src="<?= base_url(PATH_RESOURCES)?>/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="<?= base_url(PATH_RESOURCES3)?>/ace.js"></script>
-<!--<script src="https://ajaxorg.github.io/ace-builds/src/ace.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
 <script>
 	var editor = ace.edit("editor");
 	editor.setTheme("ace/theme/github");

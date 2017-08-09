@@ -132,7 +132,7 @@ class Usuario extends CI_Controller {
 		$this->form_validation->set_rules($rules);
 
 		if ($this->form_validation->run() == TRUE) {
-			if(!$this->Sys_model->getUserName($this->input->post(USER))){
+			if($this->Sys_model->getUserName($this->input->post(USER))){
 				$data['message'] = 'Nombre de usuario no es valido.';
 			}else{
 				if($this->input->post(PASS) == $this->input->post(PASS2)){
