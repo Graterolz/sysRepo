@@ -140,7 +140,7 @@ define ('MENU_LOGOUT','Logout');
 
 // Titulos Paneles
 define ('TITULO_USUARIO','Informacion de Usuario');
-define ('TITULO_CODIGO','Mis Codigos');
+define ('TITULO_CODIGO','Informacion de Codigos');
 define ('TITULO_EVENTO','Eventos del Repositorio');
 define ('TITULO_BUZON','Buzon del Repositorio');
 
@@ -148,6 +148,10 @@ define ('TITULO_BUZON','Buzon del Repositorio');
 define ('TITULO_REPORTE_USUARIO','Usuarios mas destacados');
 define ('TITULO_REPORTE_VISTAS','Codigos fuentes mas vistos');
 define ('TITULO_REPORTE_DESCARGAS','Codigos fuentes mas descargados');
+
+// Titulos Busqueda
+define ('TITULO_RESULTADOS_USUARIO','Resultados de Usuario/s');
+define ('TITULO_RESULTADOS_CODIGO','Resultados de Codigo/s');
 
 // Otros
 define ('CANTIDAD','cantidad');

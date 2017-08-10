@@ -272,6 +272,7 @@ class Sys_model extends CI_Model{
 		$this->db->like(TABLA_USUARIO.'.'.USER,$string);
 		$this->db->or_like(TABLA_USUARIO.'.'.NOMBRE,$string);
 		$this->db->or_like(TABLA_USUARIO.'.'.APELLIDO,$string);
+		$this->db->or_like(TABLA_USUARIO.'.'.DIRECCION,$string);
 		$query=$this->db->get();
 		// echo $this->db->last_query();
 

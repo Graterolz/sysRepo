@@ -194,6 +194,7 @@ if ($usuario){
 									<td><?= $codigo_row->titulo; ?></td>
 									<td><?= date("d/m/Y H:m:s", strtotime($codigo_row->fecha_registro)); ?></td>
 <?php
+if(!$readonly){
 	if($codigo_row->estado_codigo == ESTADO_CODIGO_EDICION){
 ?>
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_SEND."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm"><i class="fa fa-send fa-fw"></i> <strong>ENVIAR</strong></a></td>
@@ -204,7 +205,6 @@ if ($usuario){
 	}else if ($codigo_row->estado_codigo == ESTADO_CODIGO_ENVIADO){
 ?>
 									<td><a href="#" class="btn btn-default btn-sm disabled"><i class="fa fa-send fa-fw"></i> <strong>ENVIADO</strong></a></td>
-									<!--<td><i class="fa fa-send fa-fw"></i><strong> ENVIADO</strong></td>-->
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></td>
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DOWNLOAD."/".$codigo_row->idcod; ?>" class="btn btn-success btn-sm"><i class="fa fa-download fa-fw"></i> <strong>DESCARGAR</strong></a></td>
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EXECUTE."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-flash fa-fw"></i> <strong>EJECUTAR</strong></a></td>
@@ -213,12 +213,19 @@ if ($usuario){
 	}else{
 ?>
 									<td><a href="#" class="btn btn-primary btn-sm disabled"><i class="fa fa-check fa-fw"></i> <strong>APROBADO</strong></a></td>
-									<!--<td><i class="fa fa-check fa-fw"></i><strong> APROBADO</strong></td>-->
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></td>
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_DOWNLOAD."/".$codigo_row->idcod; ?>" class="btn btn-success btn-sm"><i class="fa fa-download fa-fw"></i> <strong>DESCARGAR</strong></a></td>
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_EXECUTE."/".$codigo_row->idcod; ?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-flash fa-fw"></i> <strong>EJECUTAR</strong></a></td>
 <?php
 	}
+}else{
+?>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></td>
+<?php	
+}	
 ?>
 								</tr>
 <?php

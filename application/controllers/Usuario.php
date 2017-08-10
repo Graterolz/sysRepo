@@ -38,6 +38,12 @@ class Usuario extends CI_Controller {
 		$data['codigo_rules'] = $this->Codigo_model->codigo_rules;
 		$data['generos'] = $this->Sys_model->generos;
 		$data['nacionalidad'] = $this->Sys_model->nacionalidad;
+		$data['readonly'] = false;
+
+		// Agrega visita
+		if($this->session->userdata(IDUSU_SESSION) != $data['codigo']->row()->idusu){
+			$data['readonly'] = true;
+		}		
 
 		$this->load->view(HEADER);
 		$this->load->view(MENU);
