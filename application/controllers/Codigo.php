@@ -253,6 +253,11 @@ class Codigo extends CI_Controller {
 
 		$data['codigo'] = $this->Codigo_model->get($idcod);
 
+		// Agrega ejecucion
+		if($this->session->userdata(IDUSU_SESSION) != $data['codigo']->row()->idusu){
+			$this->Codigo_model->addEjecuciones($idcod);
+		}
+
 		$this->load->view(HEADER);
 		$this->load->view(EXE_CODIGO,$data);
 		$this->load->view(FOOTER);

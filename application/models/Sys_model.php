@@ -156,13 +156,14 @@ class Sys_model extends CI_Model{
 	// Reporte de codigos por vistas
 	function getReportVistas(){
 		$this->db->select(
+			TABLA_CODIGO.'.'.IDCOD.','.
 			TABLA_CODIGO.'.'.TITULO.','.
 			TABLA_CODIGO.'.'.VISTAS
 		);
 		$this->db->from(TABLA_CODIGO);
 		$this->db->where(TABLA_CODIGO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$this->db->order_by(2,'DESC');
-		$this->db->order_by(1,'ASC');
+		$this->db->order_by(3,'DESC');
+		$this->db->order_by(2,'ASC');
 		$this->db->limit(5);
 		$query=$this->db->get();
 		// echo $this->db->last_query();
@@ -177,13 +178,14 @@ class Sys_model extends CI_Model{
 	// Reporte de codigos por descargas
 	function getReportDescargas(){
 		$this->db->select(
+			TABLA_CODIGO.'.'.IDCOD.','.
 			TABLA_CODIGO.'.'.TITULO.','.
 			TABLA_CODIGO.'.'.DESCARGAS
 		);
 		$this->db->from(TABLA_CODIGO);
 		$this->db->where(TABLA_CODIGO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$this->db->order_by(2,'DESC');
-		$this->db->order_by(1,'ASC');
+		$this->db->order_by(3,'DESC');
+		$this->db->order_by(2,'ASC');
 		$this->db->limit(5);
 		$query=$this->db->get();
 		// echo $this->db->last_query();
@@ -198,13 +200,14 @@ class Sys_model extends CI_Model{
 	// Reporte de codigos por ejecuciones
 	function getReportEjecuciones(){
 		$this->db->select(
+			TABLA_CODIGO.'.'.IDCOD.','.
 			TABLA_CODIGO.'.'.TITULO.','.
 			TABLA_CODIGO.'.'.EJECUCIONES
 		);
 		$this->db->from(TABLA_CODIGO);
 		$this->db->where(TABLA_CODIGO.'.'.ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
-		$this->db->order_by(2,'DESC');
-		$this->db->order_by(1,'ASC');
+		$this->db->order_by(3,'DESC');
+		$this->db->order_by(2,'ASC');
 		$this->db->limit(5);
 		$query=$this->db->get();
 		// echo $this->db->last_query();

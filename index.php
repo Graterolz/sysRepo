@@ -148,6 +148,7 @@ define ('TITULO_BUZON','Buzon del Repositorio');
 define ('TITULO_REPORTE_USUARIO','Usuarios mas destacados');
 define ('TITULO_REPORTE_VISTAS','Codigos fuentes mas vistos');
 define ('TITULO_REPORTE_DESCARGAS','Codigos fuentes mas descargados');
+define ('TITULO_REPORTE_EJECUCIONES','Codigos fuentes mas ejecutados');
 
 // Titulos Busqueda
 define ('TITULO_RESULTADOS_USUARIO','Resultados de Usuario/s');

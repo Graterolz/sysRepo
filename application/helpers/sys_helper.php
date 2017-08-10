@@ -28,10 +28,19 @@
 	}
 
 	//
-	function getTextoReport($data){
+	function getTextoUsuarioReport($data){
 		$message =
 		'<a href="'.base_url(PATH_MENU).'/'.USUARIO_GET.'/'.$data->idusu.'">
 		<strong>'.strtoupper($data->user).'</strong></a>';
+		
+		return $message;
+	}
+
+	//
+	function getTextoCodigoReport($data){
+		$message =
+		'<a href="'.base_url(PATH_MENU).'/'.CODIGO_GET.'/'.$data->idcod.'">
+		<strong>'.strtoupper($data->titulo).'</strong></a>';
 		
 		return $message;
 	}

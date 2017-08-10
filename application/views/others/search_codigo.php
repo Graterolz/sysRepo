@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<!-- /.row -->
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-6">
 			<!-- CODIGO -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -32,15 +32,9 @@ if($codigo){
 ?>
 						<div class="col-lg-12">
 							<div class="well">
-								<div class="row">
-									<div class="col-lg-10">
-										<h4><?= $codigo_row->titulo; ?></h4>
-										<p><?= $codigo_row->descripcion; ?></p>										
-									</div>
-									<div class="col-lg-2">
-										<p><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary" target="_blank"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></p>
-									</div>
-								</div>									
+								<h4><?= $codigo_row->titulo; ?></h4>
+								<p><?= $codigo_row->descripcion; ?></p>
+								<p><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm" target="_blank"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></p>
 							</div>
 						</div>
 <?php
@@ -56,8 +50,7 @@ if($codigo){
 <?php
 }
 ?>
-					</div>
-					<!-- /.table-responsive -->
+						</div>
 				</div>
 				<!-- /.panel-body -->
 			</div>
@@ -65,7 +58,7 @@ if($codigo){
 		</div>
 
 
-		<div class="col-lg-12">
+		<div class="col-lg-6">
 			<!-- CODIGO -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -83,10 +76,11 @@ if($codigo){
 if($usuario){
 	foreach($usuario->result() as $usuario_row){
 ?>
-						<div class="col-lg-4">
+						<div class="col-lg-6">
 							<div class="well">
-								<h4><?= $usuario_row->nombre.' '.$usuario_row->apellido; ?></h4>
-								<p><?= $usuario_row->user; ?></p>
+								<h4><?= $usuario_row->nombre.' '.$usuario_row->apellido.' ('.$usuario_row->user.')'; ?></h4>
+								<p><?= $usuario_row->email; ?></p>
+								<p><a href="<?= base_url(PATH_MENU)."/".USUARIO_GET."/".$usuario_row->idusu; ?>" class="btn btn-primary btn-sm" target="_blank"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></p>
 							</div>
 						</div>
 <?php

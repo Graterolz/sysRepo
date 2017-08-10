@@ -139,7 +139,20 @@ class Codigo_model extends CI_Model{
 
 	//
 	function addEjecuciones($idcod){
-		return false;
+		$this->db->where(IDCOD,$idcod);
+		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+		$query=$this->db->get(TABLA_CODIGO);
+
+		if($query->num_rows()>0){
+			$data=array(
+				EJECUCIONES => ($query->row()->ejecuciones+1)
+			);
+			$this->db->where(IDCOD,$idcod);
+			$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);
+			$query=$this->db->update(TABLA_CODIGO,$data);
+		}else{
+			return false;
+		}
 	}
 
 	// Reglas para formularios

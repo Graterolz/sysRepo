@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<!-- /.row -->
 	<div class="row">
-		<div class="col-lg-6">
+		<div class="col-lg-4">
 			<!-- CODIGO -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		foreach($report_usuario->result() as $report_usuario_row){
 ?>
 								<tr>
-									<td><?= getTextoReport($report_usuario_row); ?></td>
+									<td><?= getTextoUsuarioReport($report_usuario_row); ?></td>
 									<td><?= $report_usuario_row->cantidad; ?></td>
 								</tr>
 <?php
@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 
 
-		<div class="col-lg-6">
+		<div class="col-lg-8">
 			<!-- CODIGO -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		foreach($report_vistas->result() as $report_vistas_row){
 ?>
 								<tr>
-									<td><?= $report_vistas_row->titulo; ?></td>
+									<td><?= getTextoCodigoReport($report_vistas_row); /*$report_vistas_row->titulo;*/ ?></td>
 									<td><?= $report_vistas_row->vistas; ?></td>
 								</tr>
 <?php
@@ -170,7 +170,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		foreach($report_descargas->result() as $report_descargas_row){
 ?>
 								<tr>
-									<td><?= $report_descargas_row->titulo; ?></td>
+									<td><?= getTextoCodigoReport($report_descargas_row); //$report_descargas_row->titulo; ?></td>
 									<td><?= $report_descargas_row->descargas; ?></td>
 								</tr>
 <?php
@@ -202,7 +202,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="btn btn-default">
-								<i class="fa fa-code fa-fw"></i><strong> <?= TITULO_REPORTE_DESCARGAS; ?></strong>
+								<i class="fa fa-code fa-fw"></i><strong> <?= TITULO_REPORTE_EJECUCIONES; ?></strong>
 							</div>
 						</div>
 					</div>
@@ -222,7 +222,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		foreach($report_ejecuciones->result() as $report_ejecuciones_row){
 ?>
 								<tr>
-									<td><?= $report_ejecuciones_row->titulo; ?></td>
+									<td><?= getTextoCodigoReport($report_ejecuciones_row); //$report_ejecuciones_row->titulo; ?></td>
 									<td><?= $report_ejecuciones_row->ejecuciones; ?></td>
 								</tr>
 <?php
