@@ -125,7 +125,9 @@ define ('USR','USR');
 define ('ADM','ADM');
 
 // Formato fecha
-define ('FORMATO_FECHA','Y-m-d H:i:s');
+define ('FORMATO_FECHA','d/m/Y');
+define ('FORMATO_HORA','H:m:s');
+define ('FORMATO_FECHA_SAVE','Y-m-d H:i:s');
 
 // Vistas MENU
 define ('HEADER','templates/header');

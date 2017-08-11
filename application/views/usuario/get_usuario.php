@@ -43,7 +43,7 @@ if ($usuario){
 		FECHA_NACIMIENTO => array(
 			'class' => 'form-control',
 			'name' => FECHA_NACIMIENTO,
-			'value' => date("d/m/Y", strtotime($usuario_row->fecha_nacimiento)),
+			'value' => date(FORMATO_FECHA, strtotime($usuario_row->fecha_nacimiento)),
 			'readonly' => TRUE
 		),
 		NACIONALIDAD => array(
@@ -192,7 +192,7 @@ if ($usuario){
 								<tr>
 									<td><?= $codigo_row->idcod; ?></td>
 									<td><?= $codigo_row->titulo; ?></td>
-									<td><?= date("d/m/Y H:m:s", strtotime($codigo_row->fecha_registro)); ?></td>
+									<td><?= date(FORMATO_FECHA, strtotime($codigo_row->fecha_registro)); ?></td>
 <?php
 if(!$readonly){
 	if($codigo_row->estado_codigo == ESTADO_CODIGO_EDICION){

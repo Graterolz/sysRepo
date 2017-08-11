@@ -35,8 +35,8 @@ class Codigo_model extends CI_Model{
 			DESCARGAS => 0,
 			EJECUCIONES => 0,
 			ESTADO_CODIGO => ESTADO_CODIGO_EDICION,
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
 		$query=$this->db->insert(TABLA_CODIGO,$data);
@@ -50,7 +50,7 @@ class Codigo_model extends CI_Model{
 			DESCRIPCION => $data[DESCRIPCION],
 			LENGUAJE => $data[LENGUAJE],
 			CODIGO => $data[CODIGO],
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDCOD,$idcod);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

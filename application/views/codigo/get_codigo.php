@@ -62,15 +62,47 @@ if ($codigo){
 		FECHA_REGISTRO => array(
 			'class' => 'form-control',
 			'name' => FECHA_REGISTRO,
-			'value' => date("d/m/Y", strtotime($codigo_row->fecha_registro)),
+			'value' => date(FORMATO_FECHA, strtotime($codigo_row->fecha_registro)),
 			'readonly' => TRUE
 		),
 		FECHA_EDICION => array(
 			'class' => 'form-control',
 			'name' => FECHA_EDICION,
-			'value' => date("d/m/Y", strtotime($codigo_row->fecha_edicion)),
+			'value' => date(FORMATO_FECHA, strtotime($codigo_row->fecha_edicion)),
 			'readonly' => TRUE
 		)	
+	);
+}
+if ($usuario){
+	$usuario_row = $usuario->row();
+
+	$usuario_form = array(
+		NOMBRE => array(
+			'class' => 'form-control',
+			'name' => NOMBRE,
+			'value' => $usuario_row->nombre,
+			'placeholder' => $usuario_rules[NOMBRE]['label'],
+			'required' => TRUE
+		),
+		APELLIDO => array(
+			'class' => 'form-control',
+			'name' => APELLIDO,
+			'value' => $usuario_row->apellido,
+			'placeholder' => $usuario_rules[APELLIDO]['label'],
+			'required' => TRUE
+		),
+		EMAIL => array(
+			'class' => 'form-control',
+			'name' => EMAIL,
+			'value' => $usuario_row->email,
+			'readonly' => TRUE
+		),
+		USER => array(
+			'class' => 'form-control',
+			'name' => USER,
+			'value' => $usuario_row->user,
+			'readonly' => TRUE
+		)
 	);
 }
 ?>
@@ -87,7 +119,7 @@ if ($codigo){
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-12">
+						<div class="col-lg-9">
 							<div class="well">
 								<div class="row">
 									<div class="col-lg-12">
@@ -140,8 +172,27 @@ if ($codigo){
 									<!-- /.col-lg-4 (nested) -->
 								</div>
 							</div>
-
-							<!-- -->
+						</div>
+						<div class="col-lg-3">
+							<div class="well">
+								<div class="row">
+									<div class="col-lg-12">
+										<h4>
+											<?= $usuario_form[NOMBRE]['value'].' '.$usuario_form[APELLIDO]['value'];?>
+										</h4>
+										<div class="form-group">
+											<?= form_label($usuario_rules[USER]['label'],$usuario_rules[USER]['field']); ?>
+											<?= form_input($usuario_form[USER]); ?>
+										</div>
+										<div class="form-group">
+											<?= form_label($usuario_rules[EMAIL]['label'],$usuario_rules[EMAIL]['field']); ?>
+											<?= form_input($usuario_form[EMAIL]); ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>						
+						<div class="col-lg-12">
 							<div class="well">
 								<div class="row">
 									<div class="col-lg-12">
@@ -154,7 +205,6 @@ if ($codigo){
 									<!-- /.col-lg-4 (nested) -->
 								</div>
 							</div>
-							
 						</div>
 						<!-- /.col-lg-12 (nested) -->
 					</div>

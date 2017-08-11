@@ -37,8 +37,8 @@ class Usuario_model extends CI_Model{
 			EMAIL => $data[EMAIL],
 			USER => $data[USER],
 			PASS => $data[PASS],
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);		
 		$query=$this->db->insert(TABLA_USUARIO,$data);
@@ -59,7 +59,7 @@ class Usuario_model extends CI_Model{
 			EMAIL => $data[EMAIL],
 			// USER => $data[USER],
 			// PASS => $data[PASS],
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDUSU,$idusu);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

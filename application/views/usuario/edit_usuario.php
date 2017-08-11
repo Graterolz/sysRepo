@@ -45,7 +45,7 @@ if ($usuario){
 		FECHA_NACIMIENTO => array(
 			'class' => 'form-control',
 			'name' => FECHA_NACIMIENTO,
-			'value' => date("d/m/Y", strtotime($usuario_row->fecha_nacimiento)),
+			'value' => date(FORMATO_FECHA, strtotime($usuario_row->fecha_nacimiento)),
 			'placeholder' => $usuario_rules[FECHA_NACIMIENTO]['label'],
 			'required' => TRUE
 		),

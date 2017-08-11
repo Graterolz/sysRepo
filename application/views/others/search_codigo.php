@@ -34,7 +34,7 @@ if($codigo){
 							<div class="well">
 								<h4><?= $codigo_row->titulo; ?></h4>
 								<p><?= $codigo_row->descripcion; ?></p>
-								<p><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm" target="_blank"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></p>
+								<p><a href="<?= base_url(PATH_MENU)."/".CODIGO_GET."/".$codigo_row->idcod; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></p>
 							</div>
 						</div>
 <?php
@@ -80,7 +80,7 @@ if($usuario){
 							<div class="well">
 								<h4><?= $usuario_row->nombre.' '.$usuario_row->apellido.' ('.$usuario_row->user.')'; ?></h4>
 								<p><?= $usuario_row->email; ?></p>
-								<p><a href="<?= base_url(PATH_MENU)."/".USUARIO_GET."/".$usuario_row->idusu; ?>" class="btn btn-primary btn-sm" target="_blank"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></p>
+								<p><a href="<?= base_url(PATH_MENU)."/".USUARIO_GET."/".$usuario_row->idusu; ?>" class="btn btn-primary btn-sm"><i class="fa fa-search fa-fw"></i> <strong>VER</strong></a></p>
 							</div>
 						</div>
 <?php

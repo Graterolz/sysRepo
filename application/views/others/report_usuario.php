@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<!-- /.row -->
 	<div class="row">
-		<div class="col-lg-4">
+		<div class="col-lg-5">
 			<!-- CODIGO -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 
 
-		<div class="col-lg-8">
+		<div class="col-lg-7">
 			<!-- CODIGO -->
 			<div class="panel panel-default">
 				<div class="panel-heading">

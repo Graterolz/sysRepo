@@ -41,6 +41,11 @@ class Codigo extends CI_Controller {
 
 		$data['codigo'] = $this->Codigo_model->get($idcod);
 		$data['codigo_rules'] = $this->Codigo_model->codigo_rules;
+
+		$idusu = $this->Codigo_model->get($idcod)->row()->idusu;
+		$data['usuario'] = $this->Usuario_model->get($idusu);
+		$data['usuario_rules'] = $this->Usuario_model->usuario_rules;
+
 		$data['lenguaje'] = $this->Sys_model->lenguaje;
 
 		$this->load->view(HEADER);

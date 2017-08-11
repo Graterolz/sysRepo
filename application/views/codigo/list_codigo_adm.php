@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<td><?= $codigo_row->idcod; ?></td>
 									<td><?= $codigo_row->user; ?></td>
 									<td><?= $codigo_row->titulo; ?></td>
-									<td><?= date("d/m/Y H:m:s", strtotime($codigo_row->fecha_registro)); ?></td>
+									<td><?= date(FORMATO_FECHA, strtotime($codigo_row->fecha_registro)); ?></td>
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_APROB."/".$codigo_row->idcod; ?>" class="btn btn-success btn-xs"><i class="fa fa-check fa-fw"></i> <strong>APROBAR</strong></a></td>
 									<td><a href="<?= base_url(PATH_MENU)."/".CODIGO_NOAPROB."/".$codigo_row->idcod; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times fa-fw"></i> <strong>NO APROBAR</strong></a></td>
 									<td></td>

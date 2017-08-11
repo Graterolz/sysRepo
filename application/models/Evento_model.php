@@ -29,8 +29,8 @@ class Evento_model extends CI_Model{
 			IDCOD => $data[IDCOD],
 			IDCODORI => $data[IDCODORI],
 			ACCION => ACCION_CODIGO_NUEVO,
-			FECHA_REGISTRO => date(FORMATO_FECHA),
-			FECHA_EDICION => date(FORMATO_FECHA),
+			FECHA_REGISTRO => date(FORMATO_FECHA_SAVE),
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE),
 			ESTADO_REGISTRO => ESTADO_REGISTRO_ACTIVO
 		);
 		$query=$this->db->insert(TABLA_EVENTO,$data);
@@ -41,7 +41,7 @@ class Evento_model extends CI_Model{
 	function edit($ideve,$data){
 		$data=array(
 			ACCION => $data[ACCION],
-			FECHA_EDICION => date(FORMATO_FECHA)
+			FECHA_EDICION => date(FORMATO_FECHA_SAVE)
 		);
 		$this->db->where(IDEVE,$ideve);
 		$this->db->where(ESTADO_REGISTRO,ESTADO_REGISTRO_ACTIVO);

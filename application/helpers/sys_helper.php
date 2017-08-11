@@ -16,8 +16,8 @@
 				ha insertado el codigo
 				<a href="'.base_url(PATH_MENU).'/'.CODIGO_GET.'/'.$data->idcod.'">
 				<strong>'.$data->titulo.'</strong></a> el dia '.
-				date("d/m/Y", strtotime($data->fecha_registro)).' a las '.
-				date("H:m:s", strtotime($data->fecha_registro)).' horas.';
+				date(FORMATO_FECHA, strtotime($data->fecha_registro)).' a las '.
+				date(FORMATO_HORA, strtotime($data->fecha_registro)).' horas.';
 		}elseif($data->accion == ACCION_CODIGO_MEJORA){
 			$message = var_dump($data);
 		}
