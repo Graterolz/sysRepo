@@ -72,7 +72,7 @@ define ('TABLA_USUARIO','usuario');
 define ('TABLA_CODIGO','codigo');
 define ('TABLA_EVENTO','evento');
 
-// Campos - TABLA_USUARIO
+// Campos tablas
 define ('IDUSU','idusu');
 define ('IDROL','idrol');
 define ('CEDULA','cedula');
@@ -90,8 +90,6 @@ define ('PASS2','pass2');
 define ('FECHA_REGISTRO','fecha_registro');
 define ('FECHA_EDICION','fecha_edicion');
 define ('ESTADO_REGISTRO','estado_registro');
-
-// Campos - TABLA_CODIGO
 define ('IDCOD','idcod');
 define ('IDCODORI','idcodori');
 define ('TITULO','titulo');
@@ -102,8 +100,6 @@ define ('VISTAS','vistas');
 define ('DESCARGAS','descargas');
 define ('EJECUCIONES','ejecuciones');
 define ('ESTADO_CODIGO','estado_codigo');
-
-// Campos - TABLA_EVENTO
 define ('IDEVE','ideve');
 define ('ACCION','accion');
 
